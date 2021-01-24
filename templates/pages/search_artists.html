@@ -1,0 +1,17 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Artists Search{% endblock %}
+{% block content %}
+<h3>Number of search results for "{{ search }}": {{ searchartists|length }}</h3>
+<ul class="items">
+	{% for Artist in searchartists %}
+	<li>
+		<a href="/artists/{{ Artist.id }}">
+			<i class="fas fa-users"></i>
+			<div class="item">
+				<h5>{{ Artist.name }}</h5>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
